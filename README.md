@@ -96,11 +96,12 @@ der Arbeit die Rede ist.
 
 ## Ausführung
 
-Nach dem Klonen dieses repositories muss das repo für GerVADER geklont werden, da die Deutsche Variante von VADER in
-dieser Arbeit verwendet wird. Dazu in der project root folgendes git clone command
-ausführen: `git clone https://github.com/KarstenAMF/GerVADER.git`. Danach muss das Verzeichnis noch für imports
-erkennbar gemacht werden (im Prinzip zum classpath hinzufügen). In JetBrains Produkten muss das repo dafür einfach als
-sources-root markiert werden. Ansonsten kann das directory mit
+Nach dem Klonen dieses repositories muss zunächst ein conda environment mit dem vorhandenen requirements.yml erzeugt
+werden, das für dieses Projekt verwendet werden kann: `conda create --name untitled --file requirements.yml` Danach muss
+das repo für GerVADER geklont werden, da die Deutsche Variante von VADER in dieser Arbeit verwendet wird. Dazu in der
+project root folgendes git clone command ausführen: `git clone https://github.com/KarstenAMF/GerVADER.git`. Danach muss
+das Verzeichnis noch für imports erkennbar gemacht werden (im Prinzip zum classpath hinzufügen). In JetBrains Produkten
+muss das repo dafür einfach als sources-root markiert werden. Ansonsten kann das directory mit
 `conda develop GerVADER` hinzugefügt werden. Um die Versuche, wie sie in der Arbeit verwendet wurden, nachzustellen,
 sind ein paar Schritte durchzuführen. Zunächst muss sich entschieden werden, welches der beiden Kapitel 5.1 oder 5.2
 reproduziert werden soll. Soll der Vergleich aller Werkzeuge unter Verwendung eines parallelen Datensets durchgeführt
@@ -115,3 +116,17 @@ werden. Für die Vergleiche in der Arbeit wurde folgendes Command verwendet um d
 
 Es sei dazu gesagt, dass ein kompletter Durchlauf ein paar Stunden dauern kann. Insbesondere die CoreNLP Implementierung
 ist recht langsam.
+
+#### Zusammengefasst
+
+- `git clone https://github.com/patrickMalikTU/bachelors.git`
+- `conda create --name untitled --file requirements.yml`
+- In project-root: `git clone https://github.com/KarstenAMF/GerVADER.git`
+- `conda develop GerVADER`
+- Wenn notwendig CoreNLP installieren: https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK
+- und
+  starten: `java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -preload tokenize,ssplit,pos,lemma,ner,parse,depparse,sentiment -status_port 9000 -port 9000 -timeout 15000`
+- um 5.1 auszuführen in /sentimentanalysis/ navigieren und `python standard_run.py` ausführen, bzw. davor die liste in
+  util.py anpassen.
+- um 5.2 auszuführen die Liste in util.py auf ["svm", "nb"] ändern und in /sentimentanalysis/ `python transfer_run.py`
+  ausführen.

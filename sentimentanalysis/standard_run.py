@@ -1,9 +1,5 @@
-from datetime import datetime
 from statistics import median
 
-import numpy
-import copy
-import polyglot
 import util
 
 from nltk import word_tokenize
@@ -18,7 +14,7 @@ from textblob import TextBlob as TextBlob_EN
 from textblob_de import TextBlobDE as TextBlob_DE
 
 from randomizeFromFiles import K_fold_style_data_picker, K_fold_data_picker_mixed, K_fold_parallel_file_reader
-from sentimentanalysis.util import RunConfiguration, F1Composite
+from util import RunConfiguration, F1Composite
 from vaderSentimentGER import SentimentIntensityAnalyzer as Vader_DE
 
 
