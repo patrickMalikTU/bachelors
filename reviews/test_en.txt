@@ -1,0 +1,1 @@
+[{"detectedLanguage":{"language":"de","score":1.0},"translations":[{"text":"Hello, my name is Patrick.","to":"en"}]}]
