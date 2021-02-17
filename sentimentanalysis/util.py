@@ -18,7 +18,7 @@ class RunConfiguration:
     @staticmethod
     def generate_run_configs(language_dict_keys):
         # ["svm", "nb", "polyglot", "textblob", "vader", "nlp"]
-        implementations = ["vader"]
+        implementations = ["svm", "nb", "polyglot", "textblob", "vader", "nlp"]
 
         # generate all combinations
         return [RunConfiguration(w, x) for w in language_dict_keys for x in implementations]

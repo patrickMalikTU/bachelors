@@ -120,10 +120,11 @@ ist recht langsam.
 #### Zusammengefasst
 
 - `git clone https://github.com/patrickMalikTU/bachelors.git`
-- `conda create --name untitled --file requirements.yml`
+- `conda env create --name untitled --file requirements.yml`
+- `conda activate untitled` 
 - In project-root: `git clone https://github.com/KarstenAMF/GerVADER.git`
 - `conda develop GerVADER`
-- Wenn notwendig CoreNLP installieren: https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK
+- Wenn notwendig CoreNLP (in der Arbeit wurde 4.0.0 verwendet) installieren: https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK
 - und
   starten: `java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -preload tokenize,ssplit,pos,lemma,ner,parse,depparse,sentiment -status_port 9000 -port 9000 -timeout 15000`
 - um 5.1 auszuführen in /sentimentanalysis/ navigieren und `python standard_run.py` ausführen, bzw. davor die liste in
