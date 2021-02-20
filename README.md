@@ -121,13 +121,24 @@ ist recht langsam.
 
 - `git clone https://github.com/patrickMalikTU/bachelors.git`
 - `conda env create --name untitled --file requirements.yml`
-- `conda activate untitled` 
+- `conda activate untitled`
 - In project-root: `git clone https://github.com/KarstenAMF/GerVADER.git`
 - `conda develop GerVADER`
-- Wenn notwendig CoreNLP (in der Arbeit wurde 4.0.0 verwendet) installieren: https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK
+- Wenn notwendig CoreNLP (in der Arbeit wurde 4.0.0 verwendet)
+  installieren: https://github.com/nltk/nltk/wiki/Stanford-CoreNLP-API-in-NLTK
 - und
   starten: `java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -preload tokenize,ssplit,pos,lemma,ner,parse,depparse,sentiment -status_port 9000 -port 9000 -timeout 15000`
+- Beim ersten Ausführen kann es notwendig sein, den Aufforderungen von nltk nachzukommen und nltk-eigene pakete in der
+  konsole installieren (punkt, stopwords, ...)
 - um 5.1 auszuführen in /sentimentanalysis/ navigieren und `python standard_run.py` ausführen, bzw. davor die liste in
   util.py anpassen.
 - um 5.2 auszuführen die Liste in util.py auf ["svm", "nb"] ändern und in /sentimentanalysis/ `python transfer_run.py`
   ausführen.
+
+#### Windows vs Linux
+
+Für die beiden Betriebssysteme stehen unterschiedliche requirements.yml zur Verfügung, da gewisse conda dependencies
+leider plattformabhängig sind.. Dafür muss bei der Installation unter Linux sichergestellt werden, dass build-essentials
+und gcc installiert sind, bevor die requirements verwendet werden können. Außerdem muss pyicu installiert
+werden: `conda config --add channels conda-forge` und `conda install pyicu`
+

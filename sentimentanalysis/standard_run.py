@@ -229,8 +229,7 @@ class RunData:
             classifier = svm.SVC(kernel="linear")
             util.time_log("learning...")
             vectorized = self.training_data_text_vectorized_bow(language, k_iter)
-            classifier.fit(vectorized,
-                           self.training_data_rating(language, k_iter))
+            classifier.fit(vectorized, self.training_data_rating(language, k_iter))
             util.time_log("classifying")
             ret_list.append(classifier.predict(self.test_data_text_vectorized_bow(language, k_iter)))
             #print(language + "," + str(k_iter) +": " + str(self.bow_size(language, k_iter)))
@@ -240,6 +239,7 @@ class RunData:
         self.__check_language(language)
         util.time_log("starting nb...")
         ret_list = []
+        self.load_data_reviews(language)
         for k_iter in range(0, self.k):
             util.time_log("learning...")
             classifier = NaiveBayesClassifier.train(self.training_data_text_vectorized_nb(language, k_iter))
