@@ -52,6 +52,5 @@ dependencies:
   - pip:
     - polyglot==16.7.4
     - pycld2==0.41
-    - pyicu==2.4.3
     - textblob==0.15.3
     - textblob-de==0.4.3
