@@ -120,7 +120,7 @@ ist recht langsam.
 #### Zusammengefasst
 
 - `git clone https://github.com/patrickMalikTU/bachelors.git`
-- `conda env create --name untitled --file requirements.yml`
+- `conda create --name untitled --file requirements.yml`
 - `conda activate untitled`
 - In project-root: `git clone https://github.com/KarstenAMF/GerVADER.git`
 - `conda develop GerVADER`

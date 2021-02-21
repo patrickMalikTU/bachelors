@@ -309,7 +309,7 @@ class RunData:
         for k_iter in range(0, self.k):
             prediction = []
             for review in self.test_data_text(language, k_iter):
-                response_dict = classifier.api_call(review, properties=annotator_dict, timeout=240)
+                response_dict = classifier.api_call(review, properties=annotator_dict, timeout=500)
                 count = 0
                 sentiment = 0.0
                 for sentence in response_dict["sentences"]:
