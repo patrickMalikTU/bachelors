@@ -51,6 +51,5 @@ dependencies:
   - zlib=1.2.11=h62dcd97_4
   - pip:
     - polyglot==16.7.4
-    - pycld2==0.41
     - textblob==0.15.3
     - textblob-de==0.4.3
