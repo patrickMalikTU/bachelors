@@ -120,8 +120,12 @@ ist recht langsam.
 #### Zusammengefasst
 
 - `git clone https://github.com/patrickMalikTU/bachelors.git`
-- `conda create --name untitled --file requirements.yml`
-- `conda activate untitled`
+- download pyicu-wheel (2.4.3, python3.7) und pycld2-wheel (0.41, python3.7) von https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyicu 
+- `conda env create --file requirements_win.yml -n <name>`
+- `conda activate <name>`
+- pip install die beiden .whl die zuvor heruntergeladen wurden.
+- `git clone https://github.com/aboSamoor/polyglot.git` die Arbeit verwendet 16.7.4
+- Im polyglot-dir `python setup.py install`
 - In project-root: `git clone https://github.com/KarstenAMF/GerVADER.git`
 - `conda develop GerVADER`
 - Wenn notwendig CoreNLP (in der Arbeit wurde 4.0.0 verwendet)
