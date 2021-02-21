@@ -141,8 +141,4 @@ ist recht langsam.
 
 #### Windows vs Linux
 
-Für die beiden Betriebssysteme stehen unterschiedliche requirements.yml zur Verfügung, da gewisse conda dependencies
-leider plattformabhängig sind.. Dafür muss bei der Installation unter Linux sichergestellt werden, dass build-essentials
-und gcc installiert sind, bevor die requirements verwendet werden können. Außerdem muss pyicu installiert
-werden: `conda config --add channels conda-forge` und `conda install pyicu`
-
+Aktuell funktioniert das environment setup nur für windows.
